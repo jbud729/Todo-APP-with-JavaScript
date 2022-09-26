@@ -1,0 +1,28 @@
+<!--Adding items to list with button. Clearing items with
+    clear button.-->
+<html>
+  <head></head>
+  <body>
+    <div id="cart"></div>
+    <button onclick="addItem('Apple');">Apple</button>
+    <button onclick="addItem('Tomato');">Tomato</button>
+    <button onclick="addItem('Eggs');">Eggs</button>
+    <button onclick="clearItems();">Clear</button>
+
+    <script>
+
+      function addItem(item) {
+        const element = document.createElement('div');
+        const cartItem = document.getElementById('cart');
+        element.innerText = item;
+        cartItem.appendChild(element);
+      }
+
+      function clearItems() {
+        document.getElementById('cart').innerHTML = '';
+      }
+
+    </script>
+
+  </body>
+</html>

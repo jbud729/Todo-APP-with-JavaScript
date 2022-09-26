@@ -1,0 +1,119 @@
+<html>
+  <head></head>
+  <body>
+    <script>
+      //function that finds max number
+      function max(numbers) {
+        let maxNumber = numbers[0];
+
+        numbers.forEach(function (number) {
+          if (maxNumber < number) {
+            maxNumber = number;
+          }
+        });
+        return maxNumber;
+      }
+
+      function min(numbers) {
+        let minNumber = numbers[0];
+
+        numbers.forEach(function (number) {
+          if (number < minNumber) {
+            minNumber = number;
+          }
+        });
+        return minNumber;
+      }
+
+      // function finding smallest number greater or equal to 0
+      function smallestPosNumber(numArray) {
+          let smPosNum = Infinity;
+
+          numArray.forEach( function (number) {
+            if (number === 0) {
+              return 0;
+            } else if (number >= 0 && number <= smPosNum ) {
+              smPosNum = number; 
+            } else if ( number < 0) {
+              return;
+            }
+          });
+          return smPosNum;
+        }  
+
+      
+
+
+
+
+        
+
+      console.log(max([-10,-3,-5,-6,-7,-2]));
+      console.log(min([-10,-3,-5,-6,-7,-2]));
+      console.log(smallestPosNumber([-10,-12,-15,5,7,28]));
+    </script>
+
+
+<script>
+  // remove first two occurences of apple in array
+  function pickApples(fruitArray) {
+    appleCounter = 0;
+
+    const newArray = fruitArray.filter( function (fruit) {
+      if (fruit === 'apple' && appleCounter < 2 ){
+        appleCounter = appleCounter + 1;
+        return false;
+      }else {
+        return true;
+      }
+    });
+    return newArray;
+  }
+
+  // remove first two occurences of apple and 1 orange
+  function pickFruits(fruitArray) {
+    let appleCounter = 0;
+    let orangeCounter = 0;
+    
+
+    const newArray = fruitArray.filter( function (fruit) {
+      if (fruit === 'apple' && appleCounter < 2 ){
+        appleCounter = appleCounter + 1;
+        return false;
+      }else if (fruit === 'orange' && orangeCounter < 1 ) {
+        orangeCounter = orangeCounter + 1;
+        return false;
+      } else {
+        return true;
+      }
+    });
+    return newArray;
+  }
+
+  function pickLastApples(fruitArray) {
+    appleCounter = 0;
+    fruitArray.reverse();
+
+    const newArray = fruitArray.filter( function (fruit) {
+      if (fruit === 'apple' && appleCounter < 2 ){
+        appleCounter = appleCounter + 1;
+        return false;
+      }else {
+        return true;
+      }
+    });
+    return newArray;
+  }
+
+  console.log(pickApples(['cherry','apple','orange','apple','banana', 
+  'apple']));
+  console.log(pickFruits(['cherry','apple','orange','apple','banana', 
+  'apple']));
+  console.log(pickLastApples(['cherry','apple','orange','apple','banana', 
+  'apple']));
+  
+</script>
+
+
+  </body>
+</html>

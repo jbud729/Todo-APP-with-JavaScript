@@ -1,0 +1,46 @@
+<!-- Array of uppercase strings-->
+<script>
+  function toUpper(strArr) {
+
+    let result = [];
+
+    strArr.forEach(function (str) {
+      result.push(str.toUpperCase());
+    });
+
+    console.log(result);
+  }
+  toUpper(['hello', 'world']);
+</script>
+
+<!-- Repeat strings in array-->
+<script>
+
+  function arrayDouble(doubArr) {
+
+    let result = [];
+
+    doubArr.forEach(function(str){
+      result.push(str);
+      result.push(str);
+    });
+
+    console.log(result);
+  }
+  arrayDouble(['bark', 'meow']);
+</script>
+
+
+<script>
+  function arraySum(numArr) {
+    let total = 0;
+
+    numArr.forEach(function(num){
+      total = total + num;
+    });
+
+    console.log(total);
+  }
+  arraySum([1,2,3]);
+  arraySum([5,-2,7,0]);
+</script>

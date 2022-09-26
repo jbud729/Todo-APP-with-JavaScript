@@ -1,0 +1,53 @@
+<html>
+<head></head>
+<body>
+  <script>
+    //function that returns upper version of string
+    function upperCase(str) {
+      return str.toUpperCase(); 
+
+}
+
+console.log(upperCase('dog'));
+  </script>
+
+
+  <script>
+    //function that takes temps and returns an array with only
+    //that are above freezing point of water
+
+    function aboveFreezing(temps) {
+      const result = temps.filter( function (temp) {
+
+        return temp > 32;
+      });
+
+      return result;
+    }
+
+    console.log(aboveFreezing([31,32,33,34,35,36,37,20]));
+  </script>
+
+
+  <script>
+    //filter all red foods from array of objects
+    // Insted of using variable can return  
+    //return it in the same line. 
+    function removeRed(foodArray) {
+      return foodArray.filter(function(foodColor){
+        return foodColor.color !== 'red';
+      });
+      
+    }
+
+    console.log(removeRed([{name: 'Apple', color: 'red'},
+              {name: 'Cherry', color: 'red'},
+              {name: 'Egg', color: 'white'}]));
+
+
+  </script>
+
+
+</body>
+
+</html>

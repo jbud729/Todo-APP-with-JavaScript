@@ -1,0 +1,58 @@
+<html>
+  <head></head>
+
+  <body>
+    <!--Change button to Done when pressed-->
+    <button id="todo-button" onclick="andDone();">Press</button>
+    <script>
+      function andDone() {
+        let buttonText = document.getElementById('todo-button');
+        buttonText.innerText = 'Done';
+      }
+    </script>
+
+    <!-- Press button so that the div count increases by 1
+         Make a Down that decreases it also.-->
+    <div id="counter">0</div>
+    <button onclick="increaseCounter();">Up</button>
+    <button onclick="decreaseCounter();">Down</button>
+    <script>
+      let count = 0;
+
+      function increaseCounter() {
+        let divCounter = document.getElementById('counter');
+        count = count + 1;
+        divCounter.innerText = count;
+
+      }
+
+      function decreaseCounter() {
+        let divCounter = document.getElementById('counter');
+        count = count - 1;
+        divCounter.innerText = count;
+      }
+    </script>
+
+    <!-- Create button to take what is in inside textbox, put
+         contents in div on page-->
+    
+    <input id="textbox-content" type="text"/>
+    <button onclick="addToPage();">Add to page</button>
+    <script>
+      function addToPage() {
+        let content = document.getElementById('textbox-content');
+        let element = document.createElement('div');
+        element.innerText = content.value;
+        document.body.appendChild(element);
+
+      }
+
+    </script>
+
+
+
+
+
+  </body>
+
+</html>

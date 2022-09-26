@@ -1,0 +1,45 @@
+<html>
+  <head></head>
+  <body>
+    <!-- -->
+    <script>
+      let total = 0;
+      let cartTotal = ([
+        {name: 'Apple', price: 4, quantity: 2},
+        { name: 'Orange', price: 3, quantity: 3},
+        { name: 'Pear', price: 4, quantity: 2}
+      ]);
+
+      cartTotal.forEach( function (item){
+        total = total + (item.price * item.quantity);
+      });
+
+      console.log(total);
+    </script>
+
+    <div id="receipt"></div>
+    <div id="total"></div>
+
+    <script>
+      // reset list 
+      document.getElementById('receipt').innerHTML = '';
+      displayReceipt();
+
+      //function to display recipt:
+      function displayReceipt() {
+        //Will need to go through carTotal Array to 
+        //display each quant and price in div elements
+
+        cartTotal.forEach( function (item) {
+          let element = document.createElement('div');
+          element.innerText = item.name + ' $' + item.price + ' * ' + item.quantity + ' = ' + ' $' + (item.price * item.quantity);
+          const receipt = document.getElementById('receipt');
+          receipt.appendChild(element);
+        });
+
+        document.getElementById('total').innerText = 'Cart total' + ' = ' + '$' + total;
+      }
+    </script>
+
+  </body>
+</html>

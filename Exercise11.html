@@ -1,0 +1,39 @@
+<html>
+  <head></head>
+  <body>
+    
+    <script>
+      let total = 0;
+      
+
+      
+      // Will take object representing prices of food
+      function createCart(foodPrices) {
+        // assign a variable for the keys in list
+        const foods = Object.keys(foodPrices);
+        console.log(foods);
+
+        foods.forEach( function (food) {
+          //create div containing name, price, and Add button 
+          const item = document.createElement('div');
+          const foodPrice = foodPrices[food];
+          item.innerText = food + ' ' + ' $' + foodPrice;
+
+          // add a button 
+          const addButton = document.createElement('button');
+          addButton.innerText = "Add";
+          item.appendChild(addButton);
+          addButton.style = 'margin-left: 12px';
+          addButton.onclick = function () {
+            total = total + foodPrice;
+          };
+
+          document.body.appendChild(item);
+        });
+      }
+
+      createCart({'Apple':3, 'Orange':4, 'Egg':2});
+    </script>
+
+  </body>
+</html>

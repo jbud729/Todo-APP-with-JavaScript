@@ -1,0 +1,36 @@
+<!--cm-inch converter-->
+
+<html>
+  <head></head>
+  <body>
+    <input id="measurement" type="text"/>
+    <button onclick="cmToInches();">Convert to cm</button>
+    <button onclick="InchesToCm();">Convert to inch</button>
+    <div id="result"></div>
+
+    <script>
+
+      const result = document.getElementById('result');
+
+      function cmToInches() {
+        document.getElementById('result').innerHTML = '';
+        let element = document.createElement('div');
+        const textBox = document.getElementById('measurement');
+        element.innerText = +textBox.value/2.54 + ' centimeters';
+        result.appendChild(element);
+      }
+
+      function InchesToCm() {
+        document.getElementById('result').innerHTML = '';
+        let element = document.createElement('div');
+        const textBox = document.getElementById('measurement');
+        element.innerText = +textBox.value*2.54 + ' inches';
+        result.appendChild(element);
+      }
+
+
+      
+    </script>
+
+  </body>
+</html>
